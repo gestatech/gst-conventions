@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ruleset name="Custom ruleset"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+  <description>
+    Obiba PMD ruleset.
+  </description>
+  
+  <exclude-pattern>.*/target/generated-sources/.*</exclude-pattern>  
+
+  <rule ref="rulesets/java/codesize.xml/NcssMethodCount">
+    <properties>
+      <property name="minimum" value="21"/>
+    </properties>
+  </rule>
+
+  <rule ref="rulesets/java/codesize.xml/ExcessiveParameterList">
+    <properties>
+      <property name="minimum" value="10"/>
+    </properties>
+  </rule>
+
+  <rule ref="rulesets/java/design.xml/AvoidDeeplyNestedIfStmts">
+    <properties>
+      <property name="problemDepth" value="3"/>
+    </properties>
+  </rule>
+
+  <rule ref="rulesets/java/design.xml/AvoidReassigningParameters"/>
+  
+  <!-- unused code -->
+  <rule ref="rulesets/java/unusedcode.xml/UnusedPrivateField"/>
+  <rule ref="rulesets/java/unusedcode.xml/UnusedLocalVariable"/>
+  <rule ref="rulesets/java/unusedcode.xml/UnusedPrivateMethod"/>
+  <rule ref="rulesets/java/unusedcode.xml/UnusedFormalParameter"/>
+  
+  <!-- basic -->
+  <rule ref="rulesets/java/basic.xml/ReturnFromFinallyBlock"/>
+  <rule ref="rulesets/java/basic.xml/DontCallThreadRun"/>
+  
+  <!-- exception handling -->
+  <rule ref="rulesets/java/strictexception.xml/DoNotThrowExceptionInFinally"/>
+  
+  <!-- string and string buffer handling -->
+  <rule ref="rulesets/java/strings.xml/AvoidStringBufferField"/>
+  
+  <rule ref="rulesets/java/finalizers.xml/FinalizeShouldBeProtected"/>
+
+</ruleset>
